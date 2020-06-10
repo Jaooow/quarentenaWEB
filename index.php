@@ -8,7 +8,7 @@
 	<body>
 		<h2><u>Exercicios Quarentena</u></h2>
 		
-		<a href = "exercicio1/soma.php">Exercicio 1 - SOMA</a>
+		<a href = "2020.19.05/soma.php">Lista de Exercicios - SOMA</a>
 		
 	</body>
 	<foot>
