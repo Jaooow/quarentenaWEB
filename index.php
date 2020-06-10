@@ -8,9 +8,9 @@
 	<body>
 		<h2><u>Exercicios Quarentena</u></h2>
 		
-		<a href = "2020.19.05/soma.php">Lista de Exercicios - SOMA</a> <br/>
-		<a href = "2020.03.06/jogo_memoria.php">Jogo da Memória</a> <br/>
-		<a href = "2020.09.06/index.php">Jogo 21 WEB</a> <br/>
+		<a href = "2020.05.19/soma.php">Lista de Exercicios - SOMA</a> <br/>
+		<a href = "2020.06.03/jogo_memoria.php">Jogo da Memória</a> <br/>
+		<a href = "2020.06.09/index.php">Jogo 21 WEB</a> <br/>
 	</body>
 	<foot>
 		<p>
