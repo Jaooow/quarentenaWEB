@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang = "pt-Br">
+	<head>
+		<meta charset = "UTF-8"/>
+		<title>Jogo | Dama</title>
+	</head>
+	<body>
+		<table border = "1">
+			<?php 
+				for($i=0;$i<8;$i++){
+					echo'<tr>';
+					for($j=0;$j<8;$j++){
+						
+							if(($i%2==$j%2)){
+								echo '<td class="branco">';
+							}
+							else{
+								echo '<td class="preto">';
+							}
+						echo'</td>';
+					}
+					echo'</tr>';
+				}
+			?>
+		</table>
+	</body>
+<html>
