@@ -54,95 +54,129 @@
 			var ponto_branco=0;
 			var ponto_preto=0;
 
-			function verificaposicao(nopai, cor){
-				if(jogada==cor){
-					id_jogada = nopai.id;
-				
-				apaga();
-				
+			function verificaposicao(no, cor){
+
+				nopai=no.parentNode;
 				linha = nopai.id[3];
 				coluna = nopai.id[4];
+
+				console.log(no.className);
 				
-				if(cor == 'b'){
-					diagonal_esquerda = ((parseInt(linha)+1) +''+ (parseInt(coluna)-1));
-					diagonal_direita = ((parseInt(linha)+1) +''+ (parseInt(coluna)+1));
-
-				}else{
-					diagonal_esquerda = ((parseInt(linha)-1) +''+ (parseInt(coluna)-1));
-					diagonal_direita = ((parseInt(linha)-1) +''+ (parseInt(coluna)+1));
-				}	
-				
-					if(document.getElementById("dot"+diagonal_esquerda) != null){
-						if(document.getElementById("dot"+diagonal_esquerda).innerHTML == ''){
-							document.getElementById("dot"+diagonal_esquerda).style.borderColor = 'green';
-							document.getElementById("dot"+diagonal_esquerda).style.backgroundColor = 'lightgreen';
-						}else{
-
-							peca=document.getElementById("dot"+diagonal_esquerda).innerHTML[17];
-
-							if((cor=='b' && peca=='p') || (cor=='p' && peca=='b')){
-								
-								if(cor == 'b'){
-									diagonal_esquerda_comer = ((parseInt(linha)+2) +''+ (parseInt(coluna)-2));
-								}else{
-									diagonal_esquerda_comer = ((parseInt(linha)-2) +''+ (parseInt(coluna)-2));
-								}
-
-								if(document.getElementById("dot"+diagonal_esquerda_comer) != null){
-									if(document.getElementById("dot"+diagonal_esquerda_comer).innerHTML == ''){
-										document.getElementById("dot"+diagonal_esquerda_comer).style.borderColor = 'green';
-										document.getElementById("dot"+diagonal_esquerda_comer).style.backgroundColor = 'lightgreen';
-									}
-								}
-							}
-						}
-					}
-					if(document.getElementById("dot"+diagonal_direita) != null){
-						if(document.getElementById("dot"+diagonal_direita).innerHTML == ''){
-							document.getElementById("dot"+diagonal_direita).style.borderColor = 'green';
-							document.getElementById("dot"+diagonal_direita).style.backgroundColor = 'lightgreen';
-						}else{
-
-							peca=document.getElementById("dot"+diagonal_direita).innerHTML[17];
-							
-							if((cor=='b' && peca=='p') || (cor=='p' && peca=='b')){
-								
-								if(cor == 'b'){
-									diagonal_direita_comer = ((parseInt(linha)+2) +''+ (parseInt(coluna)+2));
-									diagonal_esquerda_comer = ((parseInt(linha)+2) +''+ (parseInt(coluna)-2));
-								}else{
-									diagonal_direita_comer = ((parseInt(linha)-2) +''+ (parseInt(coluna)+2));
-									diagonal_esquerda_comer = ((parseInt(linha)-2) +''+ (parseInt(coluna)-2));
-								}
-
-
-								if(document.getElementById("dot"+diagonal_direita_comer) != null){
-									if(document.getElementById("dot"+diagonal_direita_comer).innerHTML == ''){
-										document.getElementById("dot"+diagonal_direita_comer).style.borderColor = 'green';
-										document.getElementById("dot"+diagonal_direita_comer).style.backgroundColor = 'lightgreen';
-									}
-								}
-
-								if(document.getElementById("dot"+diagonal_esquerda_comer) != null){
-									if(document.getElementById("dot"+diagonal_esquerda_comer).innerHTML == ''){
-										document.getElementById("dot"+diagonal_esquerda_comer).style.borderColor = 'green';
-										document.getElementById("dot"+diagonal_esquerda_comer).style.backgroundColor = 'lightgreen';
-									}
-								}
-
-							}
-						}
-					}
+				if(jogada==cor){
+					if(no.className=='dot_branco' || no.className=='dot_preta'){
+						id_jogada = nopai.id;
 					
+						apaga();
+						
+						if(cor == 'b'){
+							diagonal_esquerda = ((parseInt(linha)+1) +''+ (parseInt(coluna)-1));
+							diagonal_direita = ((parseInt(linha)+1) +''+ (parseInt(coluna)+1));
 
+						}else{
+							diagonal_esquerda = ((parseInt(linha)-1) +''+ (parseInt(coluna)-1));
+							diagonal_direita = ((parseInt(linha)-1) +''+ (parseInt(coluna)+1));
+						}	
+						
+							if(document.getElementById("dot"+diagonal_esquerda) != null){
+								if(document.getElementById("dot"+diagonal_esquerda).innerHTML == ''){
+									document.getElementById("dot"+diagonal_esquerda).style.borderColor = 'green';
+									document.getElementById("dot"+diagonal_esquerda).style.backgroundColor = 'lightgreen';
+								}else{
+
+									peca=document.getElementById("dot"+diagonal_esquerda).innerHTML[17];
+
+									if((cor=='b' && peca=='p') || (cor=='p' && peca=='b')){
+										
+										if(cor == 'b'){
+											diagonal_esquerda_comer = ((parseInt(linha)+2) +''+ (parseInt(coluna)-2));
+										}else{
+											diagonal_esquerda_comer = ((parseInt(linha)-2) +''+ (parseInt(coluna)-2));
+										}
+
+										if(document.getElementById("dot"+diagonal_esquerda_comer) != null){
+											if(document.getElementById("dot"+diagonal_esquerda_comer).innerHTML == ''){
+												document.getElementById("dot"+diagonal_esquerda_comer).style.borderColor = 'green';
+												document.getElementById("dot"+diagonal_esquerda_comer).style.backgroundColor = 'lightgreen';
+											}
+										}
+									}
+								}
+							}
+							if(document.getElementById("dot"+diagonal_direita) != null){
+								if(document.getElementById("dot"+diagonal_direita).innerHTML == ''){
+									document.getElementById("dot"+diagonal_direita).style.borderColor = 'green';
+									document.getElementById("dot"+diagonal_direita).style.backgroundColor = 'lightgreen';
+								}else{
+
+									peca=document.getElementById("dot"+diagonal_direita).innerHTML[17];
+									
+									if((cor=='b' && peca=='p') || (cor=='p' && peca=='b')){
+										
+										if(cor == 'b'){
+											diagonal_direita_comer = ((parseInt(linha)+2) +''+ (parseInt(coluna)+2));
+											diagonal_esquerda_comer = ((parseInt(linha)+2) +''+ (parseInt(coluna)-2));
+										}else{
+											diagonal_direita_comer = ((parseInt(linha)-2) +''+ (parseInt(coluna)+2));
+											diagonal_esquerda_comer = ((parseInt(linha)-2) +''+ (parseInt(coluna)-2));
+										}
+
+
+										if(document.getElementById("dot"+diagonal_direita_comer) != null){
+											if(document.getElementById("dot"+diagonal_direita_comer).innerHTML == ''){
+												document.getElementById("dot"+diagonal_direita_comer).style.borderColor = 'green';
+												document.getElementById("dot"+diagonal_direita_comer).style.backgroundColor = 'lightgreen';
+											}
+										}
+
+										if(document.getElementById("dot"+diagonal_esquerda_comer) != null){
+											if(document.getElementById("dot"+diagonal_esquerda_comer).innerHTML == ''){
+												document.getElementById("dot"+diagonal_esquerda_comer).style.borderColor = 'green';
+												document.getElementById("dot"+diagonal_esquerda_comer).style.backgroundColor = 'lightgreen';
+											}
+										}
+
+									}
+								}
+							}
+						
+					}else{ //É dama
+
+						diagonal_superior_esquerda="dot"+(parseInt(linha)-1)+(parseInt(coluna)-1);
+						diagonal_superior_direita="dot"+(parseInt(linha)-1)+(parseInt(coluna)+1);
+						diagonal_inferior_esquerda="dot"+(parseInt(linha)+1)+(parseInt(coluna)-1);
+						diagonal_inferior_direita="dot"+(parseInt(linha)+1)+(parseInt(coluna)+1);
+						
+						//if(document.getElementById(diagonal_superior_esquerda)!=null){
+
+						//}
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						/*while(true){
+							if(diagonal_esquerda!=null || diagonal_esquerda!=outra_peca){
+								vetor[]=diagonal_esquerda = ((parseInt(linha)+1) +''+ (parseInt(coluna)-1));
+							}else{
+								continue
+							}
+							diagonal_esquerda = ((parseInt(linha)+1) +''+ (parseInt(coluna)-1));
+							diagonal_direita = ((parseInt(linha)+1) +''+ (parseInt(coluna)+1));
+							
+						}*/
+					}
 				}else{
 					alert("Não é sua vez");
 				}
-				
-					
+						
 			}
 			
 			function verificajogada(celula){
+
 
 				if(celula.style.backgroundColor=='lightgreen'){ 
 					var linha_celula=parseInt(celula.id[3]);
@@ -222,10 +256,10 @@
 								echo '<td class="preto" onclick="verificajogada(this)" id = "dot'.$i.$j.'">';
 								if(($i) < 3)
 								{
-									echo'<span class="dot_branco" onclick="verificaposicao(this.parentNode, \'b\')"></span>';
+									echo'<span class="dot_branco" onclick="verificaposicao(this, \'b\')"></span>';
 								}
 								elseif($i >= 5){
-									echo'<span class="dot_preta" onclick="verificaposicao(this.parentNode, \'p\')"></span>';
+									echo'<span class="dot_preta" onclick="verificaposicao(this, \'p\')"></span>';
 								}
 							}
 						echo'</td>';
